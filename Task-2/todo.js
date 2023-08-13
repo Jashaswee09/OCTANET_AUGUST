@@ -4,7 +4,6 @@ const addBtn = document.querySelector(".inputField button");
 const todoList = document.querySelector(".todoList");
 const deleteAllBtn = document.querySelector(".footer button");
 
-
 inputBox.onkeyup = ()=>{
   let userEnteredValue = inputBox.value; 
   if(userEnteredValue.trim() != 0){
@@ -13,9 +12,7 @@ inputBox.onkeyup = ()=>{
     addBtn.classList.remove("active"); 
   }
 }
-
 showTasks(); 
-
 addBtn.onclick = ()=>{ 
   let userEnteredValue = inputBox.value;
   let getLocalStorageData = localStorage.getItem("New Todo");
@@ -51,7 +48,6 @@ function showTasks(){
   inputBox.value = "";
 }
 
-
 function deleteTask(index){
   let getLocalStorageData = localStorage.getItem("New Todo");
   listArray = JSON.parse(getLocalStorageData);
@@ -59,7 +55,6 @@ function deleteTask(index){
   localStorage.setItem("New Todo", JSON.stringify(listArray));
   showTasks(); 
 }
-
 
 deleteAllBtn.onclick = ()=>{
   listArray = []; 
